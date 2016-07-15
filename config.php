@@ -1,0 +1,29 @@
+<?php
+/**
+ *===================================================
+ *Filename:config.php
+ *Author:f4ck_langzi@foxmail.com
+ *Date:2016-07-11 11:23
+ *===================================================
+ **/
+$_config=array(
+    'dbConfig'=>array(
+        'Host'=>'127.0.0.1',
+        'Port'=>'3306',
+        'Username'=>'Smarty',
+        'Password'=>'Smarty',
+        'DBname'=>'mvc_news',
+        'Charset'=>'utf8',
+        'ShowErrorInfo'=>false
+    ),
+    'viewConfig'=>array(
+        'left_delimiter'=>'{',
+        'right_delimiter'=>'}',
+        'setTemplateDir'=>'tpl',
+        'setCompileDir'=>'data/template_c',
+        'setCacheDir'=>'data/cache',
+        'caching'=>false,
+        'cache_lifetime'=>120
+    )
+);
+?>

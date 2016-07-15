@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>{$data.title}</title>
+</head>
+<style type="text/css">
+	*{
+		padding: 0px;
+		margin: 0px;
+		font-family: 楷体;
+		color: #555;
+	}
+	html{
+		background-color: #eee;
+	}
+	.nav{
+		background: #7CCD7C;
+		width: 100%;
+		height: 200px;
+
+	}
+	.nav ul{
+		background: black;
+		color: white;
+		overflow: hidden;
+
+
+	}
+	.nav li{
+		float: left;
+		list-style: none;
+		line-height: 45px;
+		margin-left: 10%;
+	}
+	.nav .spe{
+		margin-left:5%;
+	}
+	a{
+		text-decoration: none;
+		color: inherit;
+		font-weight: bolder;
+		/*text-shadow: 0 0 4px #fc6;*/
+	}
+	.content{
+		width: 80%;
+		margin: 0 auto;
+		box-shadow: 0 0 10px #7CCD7C;
+		padding-bottom: 40px;
+		z-index: 3;
+		position: relative;
+		background: white;
+		top:-50px;
+		left:50%;
+		margin-left: -40%;
+		overflow: hidden;
+	}
+	.newslist{
+		width: 70%;
+		float: left;
+
+	}
+    p.map{
+        font-size: 13px;
+        margin: 15px 0 0 10px;
+    }
+    p.map a{
+        color: #7CCD7C;
+    }
+	.aboutus{
+		width: 30%;
+		box-sizing: border-box;
+		border-left: 2px solid #ccc;
+		height: 300px;
+		float: left;
+		margin-top: 60px;
+		padding: 10px;
+	}
+	.list{
+		width: 80%;
+        min-height: 275px;
+		margin: 30px auto;
+		border: 1px solid #ccc;
+		padding: 10px;
+	}
+	.list h3{
+		line-height: 30px;
+		font-size: 18px;
+		color: #7CCD7C;
+	}
+	.list span{
+		border-left:1px solid #ccc;
+		padding: 0 5px;
+		font-size: 14px;
+		color: #999;
+	}
+	.list p{
+		text-indent: 2em;
+		padding: 20px;
+		font-size: 14px;
+	}
+    #footer{
+        display: inline-block;
+        float: left;
+        width: 100%;
+        text-align: center;
+        color: #555;
+        /*padding: 10px;*/
+        position: relative;
+        top: -30px;
+    }
+</style>
+<body>
+	<div class="nav">
+		<p style='color:#fff;font-size: 40px;padding-top:30px;margin-left:10%;'>新闻发布系统</br></p>
+		<span style="display:inline-block;margin: 20px 0 0 250px;color: #fff;font-size: 18px">－获取最新、最热资讯</span>
+	</div>
+	<div class="content">
+		<div class='newslist'>
+            <p class="map"><a href="index.php">首页</a> > {$data.title}</p>
+			<div class="list">
+				<h3>{$data.title|default:'<script>location.href="index.php";</script>'}</h3>
+				<span>作者:{$data.author}</span><span>最后修改时间:{$data.date|date_format:'%Y-%m-%d'}</span>
+				<p>{$data.content}</p>
+				
+			</div>
+		</div>
+		<div class='aboutus'>
+			<h3>关于我们</h3>
+			<p>{$about|default:'未添加关于信息'}</p>
+		</div>
+	</div>
+	{include file='footer.html'}
+</body>
+</html>
